@@ -172,6 +172,5 @@ if __name__ == '__main__':
     n = int(inp[4])  # number of numbers from 1 to n
     decks = get_input(k)
     bfs(decks, n)
-    # print("Answer depth :" , depth)
     print("Generated nodes : " ,  generate_node)
     print("Expanded nodes : " , expand_node)

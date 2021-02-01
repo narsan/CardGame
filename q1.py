@@ -1,8 +1,6 @@
 import copy
 import operator
 
-# to do : answer depth in bfs , paths in all of them
-
 
 class Node:
     instances = []
@@ -73,9 +71,7 @@ def child_node(lst):
                         list_copy[i].pop(len(decks_list1) - 1)
                         list_copy[j].append(decks_list1[len(decks_list1) - 1])
                         child_nodes.append(list_copy)
-                        # path_list.set_path(path)
-                        # path_list.node_path = copy.deepcopy(path_list.node_path)
-                        # path_list.node_path.append(path_list.get_path())
+                       
 
                 if len(decks_list2) == 0 and len(decks_list1) != 0:
                     path = "card " + str(decks_list1[len(decks_list1) - 1].number) + str(decks_list1[len(decks_list1) - 1].color)+" move from deck "+str(i)+" to deck "+str(j)
@@ -83,9 +79,7 @@ def child_node(lst):
                     list_copy[i].pop(len(decks_list1) - 1)
                     list_copy[j].append(decks_list1[len(decks_list1) - 1])
                     child_nodes.append(list_copy)
-                    # path_list.set_path(path)
-                    # path_list.node_path = copy.deepcopy(path_list.node_path)
-                    # path_list.node_path.append(path_list.get_path())
+                   
     return child_nodes
 
 
@@ -128,7 +122,6 @@ def is_goal(main_lst, the_len):
     for i in range(len(main_lst)):
         for j in range(k):
             if is_sorted(main_lst[i]) and same_size(main_lst[i], the_len) and same_color(main_lst[i]) :
-                # print(*path_list.node_path , sep="\n")
                 print_decks(main_lst[i])
                 return True
     return False
@@ -151,7 +144,6 @@ generate_node = 1
 def bfs(start , the_len):   # start is child_deck[i] it mean first child
     global expand_node
     global generate_node
-    # global depth
     frontier = [start]                 # main lst is every child of a node
     explored = []
     goal = False
@@ -163,7 +155,6 @@ def bfs(start , the_len):   # start is child_deck[i] it mean first child
         cur_node = frontier.pop(0)
         explored.append(cur_node)
         children = child_node(cur_node)
-        # depth += 1
 
         for child in children:
             if child not in frontier and child not in explored:

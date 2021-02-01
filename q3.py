@@ -189,22 +189,4 @@ if __name__ == '__main__':
     a_star(decks , n)
     print("Expanded Node: " + str(expand_node))
     print("Generated Node: " + str(generate_node))
-    # children = child_node(decks)
-    # for c in range(k):
-    #     if len(children[0][0]) == 0:
-    #         print('#', end='')
-    #     for obj in children[0][c]:
-    #         print(obj.number, obj.color, end=" ")
-    #     print()
-    #
-    # function_h(Node(children[0]))
-
-    # node1 = Node(decks)
-    # nn = Node(decks)
-    # for child in children:
-    #     node1 = Node(child)
-    #     node1.set_parent(nn)
-    #     g = function_g(node1)
-    #     print("g = " , g)
-    # g = function_g(node1)
-    # print(node1.get_list()[0][0].number)
+    
